@@ -1,0 +1,24 @@
+    docker build . //builds  a new image based on Dockerfile
+    docker build -t <imagename>>:<tag> . //build a new image with the name     
+    docker images | docker image ls// see all the images
+    docker ps -a //see all conatiners
+    docker start <container-id> or container-Name//start existing containeer
+    docker stop <container-id> or container-Name//stop existing constainer
+    docker run -p 80:3000 -d --name logsapp<image-id>:<tag-optional> 
+        //localhostPort:docker port. 
+        //Docker run creates a new container based on image. -d => detached
+        //--name specifies container name to create
+    docker run -d -p 80:3000 --name logsapp logsapp //using image by name
+    docker rm <container-id> //remove container
+    docker image rm <image-id>//remove image
+    docker rmi <image-id>//short version how to remove image
+    docker image prune//removes all unused images
+    docker container prune //deletes all containers
+
+
+    docker attach <container-id> //jump inside container (to jump out, stopped a container...)
+    docker logs <container-id> // check container logs   
+
+    docker run -d -p 80:3000 --name logsapp --rm <image-id>
+        //useful command, --rm instructs to remove container after it is stoped
+    
