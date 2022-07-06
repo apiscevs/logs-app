@@ -9,6 +9,9 @@ WORKDIR /app
 #new npm install will not be run, but taken from cache
 COPY package.json /app/ 
 
+ENV PORT=4200
+EXPOSE ${PORT}
+
 #installing all necessary components from package.json
 RUN npm install
 

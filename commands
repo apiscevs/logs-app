@@ -21,4 +21,17 @@
 
     docker run -d -p 80:3000 --name logsapp --rm <image-id>
         //useful command, --rm instructs to remove container after it is stoped
-    
+
+    docker tag logsapp apiscevs/logsapp  //assign or update a tag (actually creates a new image)    
+    docker push apiscevs/logsapp:latest //pushes an image to dockerhub
+    docker pull apiscevs/logsapp //pulls an image from docker hub
+
+    docker image inspect logsapp // view all the layers of the image
+
+    logs-app % docker run -d -p 82:83 -e PORT=83 --rm logsapp:env4200
+    //overriding environment variable called PORT to be 83
+
+    docker run -d -p 82:4300 --env-file ./config/.env --rm logsapp:env4200
+    //feeding config file with variables
+
+    make run //added a makefile, that keeps a run command, kinda shortcut
