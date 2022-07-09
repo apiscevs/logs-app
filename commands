@@ -35,3 +35,8 @@
     //feeding config file with variables
 
     make run //added a makefile, that keeps a run command, kinda shortcut
+
+    docker run -d -p 82:4300 -v mylogs:/app/data --env-file ./config/.env --rm --name fancyname logsapp:env4200
+    //-v mylogs:/app/data creates a named volume with Name mylogs
+    //named volumes are not deleted if you delete a container
+    //if no name is specified, volume will be creted as annonymous and will be deleted after container delete

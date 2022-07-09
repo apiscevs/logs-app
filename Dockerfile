@@ -12,6 +12,8 @@ COPY package.json /app/
 ENV PORT=4200
 EXPOSE ${PORT}
 
+VOLUME [ "/app/data" ]
+
 #installing all necessary components from package.json
 RUN npm install
 
